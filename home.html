@@ -171,11 +171,17 @@
                 <div class="services-box">
                     <img src="image/magiva logo.jpeg" alt="College Logo" width="50" height="50">
                     <h3>Backend Developer</h3>
-                    <h3>Magiva Technologies  MARCH - 2025 - Present</h3>
-                    <h3>6 Months </h3>
-                    <p>Specializing in API development using <b>Node.js, Express.js, and JavaScript</b>, with expertise in <b>MySQL</b> and <b>PostgreSQL</b> for efficient database management. Experienced in designing and optimizing database structures, writing complex queries using <b>Query Analyzer</b>, and ensuring seamless API integration with <b>Postman REST</b>. Skilled in <b>API development</b>, implementing secure and scalable backend solutions to enhance system performance.</p>
-
-                </div>     
+                    <h3 id="company-duration">Magiva Technologies | March 2025 - Present</h3>
+                    <h3 id="experience-duration"></h3>
+                    <p>
+                        Specializing in API development using <b>Node.js, Express.js, and JavaScript</b>, 
+                        with expertise in <b>MySQL</b> and <b>PostgreSQL</b> for efficient database management. 
+                        Experienced in designing and optimizing database structures, writing complex queries 
+                        using <b>Query Analyzer</b>, and ensuring seamless API integration with <b>Postman REST</b>. 
+                        Skilled in <b>API development</b>, implementing secure and scalable backend solutions 
+                        to enhance system performance.
+                    </p>
+                </div>
             </div>
          </section>
 
@@ -381,5 +387,33 @@
                 reset: true
             });
     </script>
+
+    <script>
+        // Start date of the job
+        const startDate = new Date("March 1, 2025");
+        const today = new Date();
+
+        // Calculate difference in months
+        let months = (today.getFullYear() - startDate.getFullYear()) * 12;
+        months -= startDate.getMonth();
+        months += today.getMonth();
+
+        if (months < 0) months = 0; // If start date is in future
+
+        // Convert to years and months
+        const years = Math.floor(months / 12);
+        const remainingMonths = months % 12;
+
+        let durationText = "";
+        if (years > 0) {
+            durationText += years + (years === 1 ? " Year " : " Years ");
+        }
+        if (remainingMonths > 0) {
+            durationText += remainingMonths + (remainingMonths === 1 ? " Month" : " Months");
+        }
+
+        document.getElementById("experience-duration").innerText = durationText || "0 Months";
+    </script>
+
 </body>
 </html>
